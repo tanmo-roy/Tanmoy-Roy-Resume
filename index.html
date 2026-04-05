@@ -36,7 +36,7 @@ body{
 a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
 button{cursor:none;border:none;background:none;font-family:inherit;color:inherit;}
-
+ 
 /* ============================================================
    CUSTOM CURSOR
 ============================================================ */
@@ -64,7 +64,7 @@ body:has(a:hover) #cursor,
 body:has(button:hover) #cursor{ transform:translate(-50%,-50%) scale(2.5); background:var(--accent);}
 body:has(a:hover) #cursor-ring,
 body:has(button:hover) #cursor-ring{ transform:translate(-50%,-50%) scale(1.6); opacity:.5;}
-
+ 
 /* ============================================================
    GRAIN OVERLAY
 ============================================================ */
@@ -75,7 +75,7 @@ body:has(button:hover) #cursor-ring{ transform:translate(-50%,-50%) scale(1.6); 
   background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-size:200px;
 }
-
+ 
 /* ============================================================
    NAV
 ============================================================ */
@@ -99,7 +99,7 @@ nav.scrolled{
   transition:color .2s;
 }
 .nav-logo:hover{color:var(--accent);}
-
+ 
 .nav-links{display:flex;align-items:center;gap:36px;}
 .nav-link{
   font-size:.78rem;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
@@ -115,7 +115,7 @@ nav.scrolled{
 }
 .nav-link:hover,.nav-link.active{color:var(--text);}
 .nav-link:hover::after,.nav-link.active::after{transform:scaleX(1);}
-
+ 
 .nav-status{
   display:flex;align-items:center;gap:8px;
   font-size:.7rem;font-family:var(--font-mono);color:var(--muted);
@@ -125,14 +125,14 @@ nav.scrolled{
   animation:pulse 2s ease infinite;
 }
 @keyframes pulse{0%,100%{opacity:1;}50%{opacity:.3;}}
-
+ 
 /* hamburger */
 .hamburger{display:none;flex-direction:column;gap:5px;padding:4px;}
 .hamburger span{display:block;width:22px;height:1.5px;background:var(--text);transition:transform .3s,opacity .3s;}
 .hamburger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
-
+ 
 /* mobile menu */
 .mobile-menu{
   display:none;
@@ -143,13 +143,13 @@ nav.scrolled{
 }
 .mobile-menu.open{display:flex;}
 .mobile-menu .nav-link{font-size:2.5rem;letter-spacing:-.5px;color:var(--text);}
-
+ 
 /* ============================================================
    PAGE SYSTEM (SPA)
 ============================================================ */
 .page{display:none;min-height:100vh;}
 .page.active{display:block;}
-
+ 
 /* entrance animation */
 .page.active .fade-in{
   animation:fadeUp .7s cubic-bezier(.16,1,.3,1) both;
@@ -159,7 +159,7 @@ nav.scrolled{
 .page.active .fade-in:nth-child(4){animation-delay:.3s;}
 .page.active .fade-in:nth-child(5){animation-delay:.4s;}
 @keyframes fadeUp{from{opacity:0;transform:translateY(32px);}to{opacity:1;transform:translateY(0);}}
-
+ 
 /* ============================================================
    HOME PAGE
 ============================================================ */
@@ -168,7 +168,7 @@ nav.scrolled{
   position:relative;overflow:hidden;
 }
 #page-home.active{display:block;}
-
+ 
 /* Hero */
 .hero{
   min-height:100vh;
@@ -177,7 +177,7 @@ nav.scrolled{
   padding:0 48px 56px;
   position:relative;
 }
-
+ 
 /* background grid */
 .hero-grid{
   position:absolute;inset:0;
@@ -192,7 +192,7 @@ nav.scrolled{
   content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse 70% 60% at 60% 40%,transparent 0%,var(--bg) 100%);
 }
-
+ 
 .hero-eyebrow{
   font-size:.72rem;font-family:var(--font-mono);
   color:var(--muted);letter-spacing:2px;text-transform:uppercase;
@@ -200,7 +200,7 @@ nav.scrolled{
   display:flex;align-items:center;gap:12px;
 }
 .hero-eyebrow::before{content:'';display:block;width:32px;height:1px;background:var(--muted);}
-
+ 
 .hero-title{
   font-family:var(--font-serif);
   font-size:clamp(3.5rem,8vw,9rem);
@@ -212,7 +212,7 @@ nav.scrolled{
   font-style:italic;
   color:var(--accent);
 }
-
+ 
 .hero-bottom{
   display:flex;align-items:flex-end;justify-content:space-between;
   gap:24px;flex-wrap:wrap;
@@ -228,7 +228,7 @@ nav.scrolled{
   font-size:.65rem;color:var(--muted);
   line-height:2;
 }
-
+ 
 .scroll-hint{
   position:absolute;right:48px;top:50%;
   transform:translateY(-50%) rotate(90deg);
@@ -237,7 +237,7 @@ nav.scrolled{
   display:flex;align-items:center;gap:12px;
 }
 .scroll-hint::after{content:'';display:block;width:48px;height:1px;background:var(--muted);}
-
+ 
 /* ---- selected works strip ---- */
 .works-strip{
   padding:0 48px 120px;
@@ -258,13 +258,13 @@ nav.scrolled{
   transition:opacity .2s;
 }
 .works-strip-header a:hover{opacity:.6;}
-
+ 
 .works-grid{
   display:grid;
   grid-template-columns:repeat(12,1fr);
   gap:2px;
 }
-
+ 
 /* featured cards */
 .work-card{
   position:relative;overflow:hidden;
@@ -280,19 +280,19 @@ nav.scrolled{
   transition:transform .5s cubic-bezier(.16,1,.3,1);
 }
 .work-card:hover .work-card-inner{transform:scale(1.02);}
-
+ 
 /* card bg pattern (replaces images, fully editable later) */
 .work-card-bg{
   position:absolute;inset:0;
   transition:transform .7s cubic-bezier(.16,1,.3,1);
 }
 .work-card:hover .work-card-bg{transform:scale(1.06);}
-
+ 
 .bg-seo{ background:linear-gradient(135deg,#0f1a2e 0%,#1a3050 100%);}
 .bg-content{ background:linear-gradient(135deg,#1a0f2e 0%,#2d1a50 100%);}
 .bg-technical{ background:linear-gradient(135deg,#0f2e1a 0%,#1a5030 100%);}
 .bg-analytics{ background:linear-gradient(135deg,#2e1a0f 0%,#503010 100%);}
-
+ 
 /* overlay decorative */
 .work-card-bg::after{
   content:'';position:absolute;inset:0;
@@ -306,7 +306,7 @@ nav.scrolled{
   top:50%;left:50%;transform:translate(-50%,-50%);
   white-space:nowrap;pointer-events:none;
 }
-
+ 
 .work-card-tag{
   position:absolute;top:20px;left:20px;z-index:2;
   font-family:var(--font-mono);font-size:.62rem;
@@ -325,19 +325,19 @@ nav.scrolled{
   font-size:.72rem;font-family:var(--font-mono);
   color:rgba(240,239,232,.45);
 }
-
+ 
 /* grid placement */
 .wc-1{grid-column:1/8;grid-row:1;}
 .wc-2{grid-column:8/13;grid-row:1;}
 .wc-3{grid-column:1/5;grid-row:2;}
 .wc-4{grid-column:5/13;grid-row:2;}
-
+ 
 /* ============================================================
    WORKS / ACHIEVEMENTS PAGE
 ============================================================ */
 #page-works{display:none;padding:140px 48px 100px;}
 #page-works.active{display:block;}
-
+ 
 .page-header{
   display:grid;grid-template-columns:1fr 1fr;
   gap:24px;align-items:end;
@@ -362,7 +362,7 @@ nav.scrolled{
   max-width:360px;
   margin-left:auto;
 }
-
+ 
 /* filter tabs */
 .filter-tabs{
   display:flex;gap:4px;
@@ -380,14 +380,14 @@ nav.scrolled{
   background:var(--accent);color:var(--bg);
   border-color:var(--accent);
 }
-
+ 
 /* achievements mosaic */
 .achievements-grid{
   display:grid;
   grid-template-columns:repeat(3,1fr);
   gap:2px;
 }
-
+ 
 .achievement-card{
   position:relative;overflow:hidden;
   background:var(--surface);
@@ -407,7 +407,7 @@ nav.scrolled{
   opacity:0;transition:opacity .3s;
 }
 .achievement-card:hover::before{opacity:1;}
-
+ 
 .ach-number{
   font-family:var(--font-serif);font-size:4rem;
   line-height:1;letter-spacing:-.03em;
@@ -423,7 +423,7 @@ nav.scrolled{
   letter-spacing:2px;text-transform:uppercase;color:var(--muted);
   border-top:1px solid var(--border);padding-top:16px;margin-top:16px;
 }
-
+ 
 /* picture cards — upload zone */
 .pic-card{
   position:relative;overflow:hidden;
@@ -442,7 +442,7 @@ nav.scrolled{
   transition:transform .6s cubic-bezier(.16,1,.3,1);
 }
 .pic-card:hover img{transform:scale(1.06);}
-
+ 
 /* upload placeholder */
 .pic-upload-placeholder{
   display:flex;flex-direction:column;align-items:center;gap:12px;
@@ -456,14 +456,14 @@ nav.scrolled{
   font-size:.78rem;color:rgba(240,239,232,.55);
   border-top:1px solid var(--border);
 }
-
+ 
 /* hidden file input */
 .upload-input{display:none;}
 .upload-btn{
   position:absolute;inset:0;cursor:none;
   display:flex;align-items:center;justify-content:center;
 }
-
+ 
 /* experience timeline */
 .timeline{margin-top:80px;}
 .timeline-header{
@@ -501,13 +501,13 @@ nav.scrolled{
   content:'→';position:absolute;left:0;color:var(--accent);font-size:.65rem;top:3px;
 }
 .timeline-bullets li strong{color:var(--text);}
-
+ 
 /* ============================================================
    ABOUT PAGE
 ============================================================ */
 #page-about{display:none;padding:140px 48px 100px;}
 #page-about.active{display:block;}
-
+ 
 .about-grid{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
   margin-bottom:100px;
@@ -521,7 +521,7 @@ nav.scrolled{
   display:flex;align-items:center;gap:12px;
 }
 .about-label::before{content:'';display:block;width:24px;height:1px;background:var(--muted);}
-
+ 
 .about-headline{
   font-family:var(--font-serif);
   font-size:clamp(2.2rem,4vw,4rem);
@@ -529,14 +529,14 @@ nav.scrolled{
   margin-bottom:36px;
 }
 .about-headline em{font-style:italic;color:var(--accent);}
-
+ 
 .about-bio{
   font-size:.88rem;line-height:2;
   color:rgba(240,239,232,.55);
   max-width:480px;
 }
 .about-bio p+p{margin-top:20px;}
-
+ 
 .about-right{}
 .about-stats{
   display:grid;grid-template-columns:1fr 1fr;gap:2px;
@@ -555,7 +555,7 @@ nav.scrolled{
   font-family:var(--font-mono);font-size:.65rem;
   letter-spacing:2px;text-transform:uppercase;color:var(--muted);
 }
-
+ 
 .domains-grid{
   display:flex;flex-wrap:wrap;gap:6px;
 }
@@ -567,7 +567,7 @@ nav.scrolled{
   transition:all .2s;
 }
 .domain-chip:hover{border-color:var(--accent);color:var(--accent);}
-
+ 
 /* skills section */
 .skills-section{margin-top:80px;}
 .skills-section h2{
@@ -575,7 +575,7 @@ nav.scrolled{
   letter-spacing:3px;text-transform:uppercase;color:var(--muted);
   margin-bottom:40px;padding-bottom:20px;border-bottom:1px solid var(--border);
 }
-
+ 
 .skills-table{width:100%;}
 .skill-row{
   display:grid;grid-template-columns:200px 1fr 60px;
@@ -596,12 +596,12 @@ nav.scrolled{
   animation:skillGrow 1.2s cubic-bezier(.16,1,.3,1) forwards;
 }
 @keyframes skillGrow{from{width:0!important;}to{}}
-
+ 
 .skill-pct{
   font-family:var(--font-mono);font-size:.7rem;
   color:var(--muted);text-align:right;
 }
-
+ 
 /* education strip */
 .edu-strip{
   margin-top:80px;
@@ -623,13 +623,13 @@ nav.scrolled{
   color:rgba(255,255,255,.04);font-weight:700;
   letter-spacing:-4px;
 }
-
+ 
 /* ============================================================
    CONTACT PAGE
 ============================================================ */
 #page-contact{display:none;padding:140px 48px 100px;}
 #page-contact.active{display:block;}
-
+ 
 .contact-split{
   display:grid;grid-template-columns:1fr 1fr;gap:80px;
   min-height:60vh;align-items:start;
@@ -642,7 +642,7 @@ nav.scrolled{
   margin-bottom:48px;
 }
 .contact-big-text em{color:var(--accent);font-style:italic;}
-
+ 
 .contact-info-list{display:flex;flex-direction:column;gap:24px;}
 .contact-info-item{
   display:flex;flex-direction:column;gap:4px;
@@ -656,10 +656,10 @@ nav.scrolled{
   transition:color .2s;
 }
 .cii-value:hover{color:var(--accent);}
-
+ 
 .contact-right{}
 .contact-form{display:flex;flex-direction:column;gap:24px;}
-
+ 
 .form-group{display:flex;flex-direction:column;gap:8px;}
 .form-group label{
   font-family:var(--font-mono);font-size:.65rem;
@@ -680,7 +680,7 @@ nav.scrolled{
 .form-group textarea{min-height:140px;}
 .form-group input::placeholder,
 .form-group textarea::placeholder{color:var(--muted);}
-
+ 
 .submit-btn{
   display:flex;align-items:center;gap:16px;
   background:var(--accent);color:var(--bg);
@@ -692,7 +692,7 @@ nav.scrolled{
 .submit-btn:hover{opacity:.88;transform:translateX(4px);}
 .submit-btn svg{width:18px;height:18px;stroke:var(--bg);fill:none;transition:transform .2s;}
 .submit-btn:hover svg{transform:translateX(4px);}
-
+ 
 /* social row */
 .social-row{
   display:flex;gap:20px;flex-wrap:wrap;
@@ -706,7 +706,7 @@ nav.scrolled{
 }
 .social-link:hover{color:var(--accent);}
 .social-link svg{width:14px;height:14px;stroke:currentColor;fill:none;}
-
+ 
 /* ============================================================
    FOOTER
 ============================================================ */
@@ -718,7 +718,7 @@ footer{
   flex-wrap:wrap;gap:12px;
 }
 #live-clock{color:var(--text);}
-
+ 
 /* ============================================================
    RESPONSIVE
 ============================================================ */
@@ -727,13 +727,13 @@ footer{
   nav.scrolled{padding:18px 24px;}
   .nav-links,.nav-status{display:none;}
   .hamburger{display:flex;}
-
+ 
   .hero{padding:0 24px 48px;}
   .scroll-hint{display:none;}
   .works-strip{padding:0 24px 80px;}
   .works-grid{grid-template-columns:1fr;display:flex;flex-direction:column;}
   .wc-1,.wc-2,.wc-3,.wc-4{grid-column:auto;}
-
+ 
   #page-works,#page-about,#page-contact{padding:120px 24px 80px;}
   .page-header{grid-template-columns:1fr;}
   .achievements-grid{grid-template-columns:1fr;}
@@ -746,7 +746,7 @@ footer{
   .skills-section .skill-row{grid-template-columns:1fr 1fr 50px;}
   .skill-name-col{grid-column:1/-1;margin-bottom:-20px;}
 }
-
+ 
 @media(max-width:480px){
   .hero-title{font-size:clamp(2.8rem,11vw,5rem);}
   .about-stats{grid-template-columns:1fr;}
@@ -754,36 +754,36 @@ footer{
 </style>
 </head>
 <body>
-
+ 
 <!-- Cursor -->
 <div id="cursor"></div>
 <div id="cursor-ring"></div>
 <!-- Grain -->
 <div id="grain"></div>
-
+ 
 <!-- ============================================================
      NAV
 ============================================================ -->
 <nav id="main-nav">
   <a class="nav-logo" href="#" onclick="showPage('home');return false;">T.Roy</a>
-
+ 
   <div class="nav-links">
     <a class="nav-link active" href="#" data-page="home" onclick="showPage('home');return false;">Home</a>
     <a class="nav-link" href="#" data-page="works" onclick="showPage('works');return false;">Works</a>
     <a class="nav-link" href="#" data-page="about" onclick="showPage('about');return false;">About</a>
     <a class="nav-link" href="#" data-page="contact" onclick="showPage('contact');return false;">Contact</a>
   </div>
-
+ 
   <div class="nav-status">
     <div class="status-dot"></div>
     Available for work
   </div>
-
+ 
   <button class="hamburger" id="hamburger" onclick="toggleMobile()">
     <span></span><span></span><span></span>
   </button>
 </nav>
-
+ 
 <!-- Mobile Menu -->
 <div class="mobile-menu" id="mobile-menu">
   <a class="nav-link" href="#" onclick="showPage('home');toggleMobile();return false;">Home</a>
@@ -791,25 +791,25 @@ footer{
   <a class="nav-link" href="#" onclick="showPage('about');toggleMobile();return false;">About</a>
   <a class="nav-link" href="#" onclick="showPage('contact');toggleMobile();return false;">Contact</a>
 </div>
-
-
+ 
+ 
 <!-- ============================================================
      HOME PAGE
 ============================================================ -->
 <div class="page active" id="page-home">
-
+ 
   <section class="hero">
     <div class="hero-grid"></div>
     <div class="scroll-hint">Scroll down</div>
-
+ 
     <div class="hero-eyebrow fade-in">Portfolio — 2026</div>
-
+ 
     <h1 class="hero-title fade-in">
       Senior<br/>
       <em>SEO</em><br/>
       Executive
     </h1>
-
+ 
     <div class="hero-bottom fade-in">
       <p class="hero-desc">
         4 years turning search algorithms into business growth. From technical audits to new-client pitches — I connect brands to the people looking for them.
@@ -821,14 +821,14 @@ footer{
       </div>
     </div>
   </section>
-
+ 
   <!-- Selected Works Strip -->
   <div class="works-strip fade-in">
     <div class="works-strip-header">
       <h2>Selected Achievements</h2>
       <a href="#" onclick="showPage('works');return false;">View All →</a>
     </div>
-
+ 
     <div class="works-grid">
       <!-- Card 1 -->
       <div class="work-card wc-1">
@@ -876,20 +876,20 @@ footer{
       </div>
     </div>
   </div>
-
+ 
   <footer>
     <span>© 2026 Tanmoy Roy</span>
     <span id="live-clock-home">—</span>
     <span>Gurgaon · India</span>
   </footer>
 </div>
-
-
+ 
+ 
 <!-- ============================================================
      WORKS / ACHIEVEMENTS PAGE
 ============================================================ -->
 <div class="page" id="page-works">
-
+ 
   <div class="page-header fade-in">
     <div class="page-header-left">
       <span>02 / Works & Achievements</span>
@@ -899,7 +899,7 @@ footer{
       A record of campaigns, wins, and the metrics that matter. Upload your achievement screenshots and certificates to bring each story to life.
     </div>
   </div>
-
+ 
   <!-- Filter tabs -->
   <div class="filter-tabs fade-in">
     <button class="filter-tab active" onclick="filterCards('all',this)">All</button>
@@ -908,10 +908,10 @@ footer{
     <button class="filter-tab" onclick="filterCards('content',this)">Content</button>
     <button class="filter-tab" onclick="filterCards('analytics',this)">Analytics</button>
   </div>
-
+ 
   <!-- Achievements Mosaic -->
   <div class="achievements-grid fade-in" id="ach-grid">
-
+ 
     <!-- Stat Card 1 -->
     <div class="achievement-card" data-cat="growth">
       <div class="achievement-card-inner">
@@ -925,7 +925,7 @@ footer{
         </div>
       </div>
     </div>
-
+ 
     <!-- Picture Card 1 — uploadable -->
     <div class="achievement-card pic-card" data-cat="growth" style="cursor:pointer;" onclick="document.getElementById('upload-1').click()">
       <div class="pic-card-inner" id="pic-1-wrap">
@@ -937,7 +937,7 @@ footer{
       <div class="pic-caption">Achievement proof / analytics screenshot</div>
       <input type="file" accept="image/*" class="upload-input" id="upload-1" onchange="previewImage(this,'pic-1-wrap')"/>
     </div>
-
+ 
     <!-- Stat Card 2 -->
     <div class="achievement-card" data-cat="growth">
       <div class="achievement-card-inner">
@@ -951,7 +951,7 @@ footer{
         </div>
       </div>
     </div>
-
+ 
     <!-- Picture Card 2 -->
     <div class="achievement-card pic-card" data-cat="technical" style="cursor:pointer;" onclick="document.getElementById('upload-2').click()">
       <div class="pic-card-inner" id="pic-2-wrap">
@@ -963,7 +963,7 @@ footer{
       <div class="pic-caption">GAIQ Certificate / tool certification</div>
       <input type="file" accept="image/*" class="upload-input" id="upload-2" onchange="previewImage(this,'pic-2-wrap')"/>
     </div>
-
+ 
     <!-- Stat Card 3 -->
     <div class="achievement-card" data-cat="technical">
       <div class="achievement-card-inner">
@@ -977,7 +977,7 @@ footer{
         </div>
       </div>
     </div>
-
+ 
     <!-- Picture Card 3 -->
     <div class="achievement-card pic-card" data-cat="analytics" style="cursor:pointer;" onclick="document.getElementById('upload-3').click()">
       <div class="pic-card-inner" id="pic-3-wrap">
@@ -989,7 +989,7 @@ footer{
       <div class="pic-caption">Analytics dashboard / GSC report</div>
       <input type="file" accept="image/*" class="upload-input" id="upload-3" onchange="previewImage(this,'pic-3-wrap')"/>
     </div>
-
+ 
     <!-- Stat Card 4 -->
     <div class="achievement-card" data-cat="content">
       <div class="achievement-card-inner">
@@ -1003,7 +1003,7 @@ footer{
         </div>
       </div>
     </div>
-
+ 
     <!-- Picture Card 4 -->
     <div class="achievement-card pic-card" data-cat="content" style="cursor:pointer;" onclick="document.getElementById('upload-4').click()">
       <div class="pic-card-inner" id="pic-4-wrap">
@@ -1015,7 +1015,7 @@ footer{
       <div class="pic-caption">Content / campaign result proof</div>
       <input type="file" accept="image/*" class="upload-input" id="upload-4" onchange="previewImage(this,'pic-4-wrap')"/>
     </div>
-
+ 
     <!-- Stat Card 5 -->
     <div class="achievement-card" data-cat="technical">
       <div class="achievement-card-inner">
@@ -1029,7 +1029,7 @@ footer{
         </div>
       </div>
     </div>
-
+ 
     <!-- Extra upload slot -->
     <div class="achievement-card pic-card" data-cat="growth" style="cursor:pointer;" onclick="document.getElementById('upload-5').click()">
       <div class="pic-card-inner" id="pic-5-wrap">
@@ -1041,14 +1041,14 @@ footer{
       <div class="pic-caption">Your achievement photo / screenshot</div>
       <input type="file" accept="image/*" class="upload-input" id="upload-5" onchange="previewImage(this,'pic-5-wrap')"/>
     </div>
-
+ 
   </div>
-
+ 
   <!-- Experience Timeline -->
   <div class="timeline fade-in">
     <div class="timeline-header">Work Experience</div>
     <div class="timeline-list">
-
+ 
       <div class="timeline-item">
         <div class="timeline-period">Nov 2024<br/>Present</div>
         <div>
@@ -1062,7 +1062,7 @@ footer{
           </ul>
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-period">Sep 2023<br/>Oct 2024</div>
         <div>
@@ -1075,7 +1075,7 @@ footer{
           </ul>
         </div>
       </div>
-
+ 
       <div class="timeline-item">
         <div class="timeline-period">Dec 2021<br/>Sep 2023</div>
         <div>
@@ -1089,23 +1089,23 @@ footer{
           </ul>
         </div>
       </div>
-
+ 
     </div>
   </div>
-
+ 
   <footer>
     <span>© 2026 Tanmoy Roy</span>
     <span id="live-clock-works">—</span>
     <span>Gurgaon · India</span>
   </footer>
 </div>
-
-
+ 
+ 
 <!-- ============================================================
      ABOUT PAGE
 ============================================================ -->
 <div class="page" id="page-about">
-
+ 
   <div class="about-grid fade-in">
     <div class="about-left">
       <div class="about-label">03 / About</div>
@@ -1148,7 +1148,7 @@ footer{
       </div>
     </div>
   </div>
-
+ 
   <!-- Skills -->
   <div class="skills-section fade-in">
     <h2>Skills & Proficiency</h2>
@@ -1195,7 +1195,7 @@ footer{
       </div>
     </div>
   </div>
-
+ 
   <!-- Education -->
   <div class="edu-strip fade-in">
     <div>
@@ -1205,27 +1205,27 @@ footer{
     </div>
     <div class="edu-year">2020</div>
   </div>
-
+ 
   <footer>
     <span>© 2026 Tanmoy Roy</span>
     <span id="live-clock-about">—</span>
     <span>Gurgaon · India</span>
   </footer>
 </div>
-
-
+ 
+ 
 <!-- ============================================================
      CONTACT PAGE
 ============================================================ -->
 <div class="page" id="page-contact">
-
+ 
   <div class="contact-split fade-in">
     <div class="contact-left">
       <h1 class="contact-big-text">
         Let's<br/>
         <em>connect</em>
       </h1>
-
+ 
       <div class="contact-info-list">
         <div class="contact-info-item">
           <span class="cii-label">Email</span>
@@ -1248,7 +1248,7 @@ footer{
           <span class="cii-value" style="color:var(--accent);">● Available for new opportunities</span>
         </div>
       </div>
-
+ 
       <div class="social-row">
         <a class="social-link" href="https://linkedin.com/in/tanmoyroy27" target="_blank">
           <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
@@ -1260,7 +1260,7 @@ footer{
         </a>
       </div>
     </div>
-
+ 
     <div class="contact-right">
       <div class="contact-form">
         <div class="form-group">
@@ -1286,15 +1286,15 @@ footer{
       </div>
     </div>
   </div>
-
+ 
   <footer>
     <span>© 2026 Tanmoy Roy</span>
     <span id="live-clock-contact">—</span>
     <span>Gurgaon · India</span>
   </footer>
 </div>
-
-
+ 
+ 
 <!-- ============================================================
      JAVASCRIPT
 ============================================================ -->
@@ -1313,7 +1313,7 @@ function animateRing(){
   requestAnimationFrame(animateRing);
 }
 animateRing();
-
+ 
 /* ---- Live clock ---- */
 function updateClock(){
   const now=new Date();
@@ -1326,13 +1326,13 @@ function updateClock(){
 }
 setInterval(updateClock,1000);
 updateClock();
-
+ 
 /* ---- Nav scroll ---- */
 const nav=document.getElementById('main-nav');
 window.addEventListener('scroll',()=>{
   nav.classList.toggle('scrolled',window.scrollY>30);
 });
-
+ 
 /* ---- Page SPA ---- */
 function showPage(name){
   document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
@@ -1343,7 +1343,7 @@ function showPage(name){
   if(target){target.classList.add('active');}
   window.scrollTo({top:0,behavior:'instant'});
 }
-
+ 
 /* ---- Mobile menu ---- */
 function toggleMobile(){
   const menu=document.getElementById('mobile-menu');
@@ -1351,7 +1351,7 @@ function toggleMobile(){
   menu.classList.toggle('open');
   btn.classList.toggle('open');
 }
-
+ 
 /* ---- Filter tabs ---- */
 function filterCards(cat, btn){
   document.querySelectorAll('.filter-tab').forEach(t=>t.classList.remove('active'));
@@ -1361,7 +1361,7 @@ function filterCards(cat, btn){
     card.style.display = show ? '' : 'none';
   });
 }
-
+ 
 /* ---- Image upload preview ---- */
 function previewImage(input, wrapId){
   const file=input.files[0];
@@ -1373,7 +1373,7 @@ function previewImage(input, wrapId){
   };
   reader.readAsDataURL(file);
 }
-
+ 
 /* ---- Contact form ---- */
 function handleSubmit(btn){
   btn.textContent='✓ Message Sent!';
@@ -1383,7 +1383,7 @@ function handleSubmit(btn){
     btn.style.background='var(--accent)';
   },3000);
 }
-
+ 
 /* ---- Scroll reveal (simple IntersectionObserver) ---- */
 const observer=new IntersectionObserver(entries=>{
   entries.forEach(e=>{
