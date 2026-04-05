@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tanmoy Roy — Senior SEO Executive</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+  <style>
+    /* ============================================================
+       CSS VARIABLES & RESET
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #f4f5f7;
+      --sidebar-bg:  #1a1f2e;
+      --card:        #ffffff;
+      --accent1:     #6b8cff;
+      --accent2:     #a78bfa;
+      --accent-grad: linear-gradient(135deg, #6b8cff 0%, #a78bfa 100%);
+      --text-dark:   #1a1f2e;
+      --text-mid:    #4a5068;
+      --text-light:  #8b93b0;
+      --sidebar-text:#e8eaf6;
+      --sidebar-muted:#8d96ba;
+      --border:      #e4e6f0;
+      --shadow-sm:   0 2px 8px rgba(106,140,255,.08);
+      --shadow-md:   0 6px 24px rgba(106,140,255,.13);
+      --radius:      14px;
+      --radius-sm:   8px;
+    }
+
+    html { font-size: 15px; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    /* ============================================================
+       PAGE WRAPPER
+    ============================================================ */
+    .page {
+      max-width: 1060px;
+      margin: 40px auto;
+      background: var(--card);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(26,31,46,.14);
+      display: grid;
+      grid-template-columns: 270px 1fr;
+      grid-template-rows: auto 1fr;
+    }
+
+    /* ============================================================
+       HEADER — full-width top bar
+    ============================================================ */
+    .header {
+      grid-column: 1 / -1;
+      background: var(--sidebar-bg);
+      padding: 44px 48px 36px;
+      display: flex;
+      align-items: flex-end;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* decorative gradient blob */
+    .header::before {
+      content: '';
+      position: absolute;
+      width: 380px; height: 380px;
+      background: radial-gradient(circle, rgba(107,140,255,.25) 0%, transparent 70%);
+      top: -120px; right: -60px;
+      pointer-events: none;
+    }
+    .header::after {
+      content: '';
+      position: absolute;
+      width: 220px; height: 220px;
+      background: radial-gradient(circle, rgba(167,139,250,.2) 0%, transparent 70%);
+      bottom: -60px; left: 200px;
+      pointer-events: none;
+    }
+
+    /* avatar circle */
+    .avatar {
+      width: 84px; height: 84px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      color: #fff;
+      flex-shrink: 0;
+      box-shadow: 0 0 0 4px rgba(107,140,255,.3);
+      position: relative; z-index: 1;
+    }
+
+    .header-text { position: relative; z-index: 1; }
+
+    .header-text h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.3rem;
+      color: #fff;
+      letter-spacing: -.5px;
+      line-height: 1.1;
+    }
+
+    .header-text .title {
+      margin-top: 6px;
+      font-size: .9rem;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--accent-grad);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .header-contacts {
+      margin-top: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 22px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--sidebar-muted);
+      font-size: .8rem;
+      text-decoration: none;
+      transition: color .2s;
+    }
+    .contact-item:hover { color: var(--accent1); }
+
+    .contact-item .ic {
+      width: 20px; height: 20px;
+      background: rgba(107,140,255,.15);
+      border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .contact-item .ic svg { width: 11px; height: 11px; fill: var(--accent1); }
+
+    /* ============================================================
+       SIDEBAR (left column)
+    ============================================================ */
+    .sidebar {
+      background: #21263a;
+      padding: 36px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    /* ---- Sidebar section title ---- */
+    .sb-section-title {
+      font-size: .68rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--accent1);
+      margin-bottom: 16px;
+    }
+
+    /* ---- Skills ---- */
+    .skill-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .skill-item {}
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      font-size: .8rem;
+      color: var(--sidebar-text);
+      margin-bottom: 5px;
+    }
+
+    .skill-bar {
+      height: 4px;
+      background: rgba(255,255,255,.08);
+      border-radius: 99px;
+      overflow: hidden;
+    }
+    .skill-fill {
+      height: 100%;
+      background: var(--accent-grad);
+      border-radius: 99px;
+      animation: barGrow .9s ease forwards;
+      transform-origin: left;
+    }
+    @keyframes barGrow { from { width: 0 !important; } }
+
+    /* ---- Tools chips ---- */
+    .tools-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+    }
+    .tool-chip {
+      background: rgba(107,140,255,.12);
+      color: var(--accent1);
+      border: 1px solid rgba(107,140,255,.2);
+      border-radius: 99px;
+      padding: 4px 12px;
+      font-size: .74rem;
+      font-weight: 500;
+    }
+
+    /* ---- Languages ---- */
+    .lang-list { display: flex; flex-direction: column; gap: 10px; }
+
+    .lang-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .lang-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      flex-shrink: 0;
+    }
+
+    .lang-name {
+      font-size: .82rem;
+      color: var(--sidebar-text);
+      flex: 1;
+    }
+    .lang-level {
+      font-size: .7rem;
+      color: var(--sidebar-muted);
+    }
+
+    /* ---- Interests ---- */
+    .interest-list { display: flex; flex-direction: column; gap: 8px; }
+
+    .interest-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--sidebar-text);
+      font-size: .82rem;
+    }
+    .interest-item svg { width: 15px; height: 15px; fill: var(--accent2); flex-shrink: 0; }
+
+    /* ============================================================
+       MAIN CONTENT (right column)
+    ============================================================ */
+    .main {
+      padding: 40px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 36px;
+    }
+
+    /* ---- Section heading ---- */
+    .section-heading {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-heading .sh-icon {
+      width: 32px; height: 32px;
+      border-radius: var(--radius-sm);
+      background: var(--accent-grad);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .section-heading .sh-icon svg { width: 16px; height: 16px; fill: #fff; }
+
+    .section-heading h2 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--text-dark);
+      letter-spacing: -.3px;
+    }
+
+    .section-heading .sh-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ---- Summary card ---- */
+    .summary-card {
+      background: linear-gradient(135deg, #f0f3ff 0%, #f6f0ff 100%);
+      border: 1px solid rgba(107,140,255,.15);
+      border-radius: var(--radius);
+      padding: 20px 24px;
+      font-size: .88rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      position: relative;
+      overflow: hidden;
+    }
+    .summary-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      width: 3px;
+      background: var(--accent-grad);
+      border-radius: 0 3px 3px 0;
+    }
+
+    /* ---- Domain tags inside summary ---- */
+    .domain-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+    .domain-tag {
+      background: rgba(107,140,255,.1);
+      color: var(--accent1);
+      border-radius: 99px;
+      padding: 3px 11px;
+      font-size: .72rem;
+      font-weight: 500;
+    }
+
+    /* ---- Experience cards ---- */
+    .exp-list { display: flex; flex-direction: column; gap: 20px; }
+
+    .exp-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .exp-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-2px);
+    }
+
+    /* left accent stripe */
+    .exp-card::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 16px; bottom: 16px;
+      width: 3px;
+      background: var(--accent-grad);
+      border-radius: 0 3px 3px 0;
+    }
+
+    .exp-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exp-role {
+      font-size: .97rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .exp-company {
+      font-size: .8rem;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+    .exp-company span {
+      font-style: italic;
+      color: var(--text-light);
+    }
+
+    .exp-period {
+      background: linear-gradient(135deg, rgba(107,140,255,.1), rgba(167,139,250,.1));
+      border: 1px solid rgba(107,140,255,.15);
+      color: var(--accent1);
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 4px 11px;
+      border-radius: 99px;
+      white-space: nowrap;
+      letter-spacing: .4px;
+    }
+
+    .exp-bullets {
+      margin-top: 12px;
+      padding-left: 0;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .exp-bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: .82rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+    .exp-bullets li::before {
+      content: '';
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: var(--accent-grad);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+
+    /* highlight stat inside bullet */
+    .stat {
+      font-weight: 600;
+      color: var(--accent1);
+    }
+
+    /* ---- Education card ---- */
+    .edu-card {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px 22px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .edu-icon {
+      width: 44px; height: 44px;
+      background: var(--accent-grad);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .edu-icon svg { width: 22px; height: 22px; fill: #fff; }
+
+    .edu-degree {
+      font-size: .96rem;
+      font-weight: 600;
+      color: var(--text-dark);
+    }
+    .edu-university {
+      font-size: .81rem;
+      color: var(--text-mid);
+      margin-top: 2px;
+    }
+    .edu-meta {
+      display: flex;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .edu-badge {
+      background: linear-gradient(135deg, rgba(107,140,255,.08), rgba(167,139,250,.08));
+      border: 1px solid rgba(107,140,255,.15);
+      color: var(--accent1);
+      font-size: .72rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 99px;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 740px) {
+      .page {
+        grid-template-columns: 1fr;
+        margin: 0;
+        border-radius: 0;
+      }
+      .header { padding: 32px 24px 28px; }
+      .header-text h1 { font-size: 1.8rem; }
+      .sidebar { padding: 28px 20px; }
+      .main { padding: 28px 20px; }
+    }
+
+    /* ============================================================
+       PRINT
+    ============================================================ */
+    @media print {
+      body { background: #fff; }
+      .page { margin: 0; box-shadow: none; border-radius: 0; }
+      .exp-card:hover { transform: none; box-shadow: var(--shadow-sm); }
+    }
+  </style>
+</head>
+<body>
+
+<div class="page">
+
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
+  <header class="header">
+    <div class="avatar">TR</div>
+    <div class="header-text">
+      <h1>Tanmoy Roy</h1>
+      <div class="title">Senior SEO Executive</div>
+      <div class="header-contacts">
+
+        <a class="contact-item" href="mailto:tanmoyroy2710@gmail.com">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 2-8 5-8-5h16zm0 12H4V9l8 5 8-5v9z"/></svg>
+          </span>
+          tanmoyroy2710@gmail.com
+        </a>
+
+        <a class="contact-item" href="tel:8335857135">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1l-2.3 2.2z"/></svg>
+          </span>
+          +91 8335857135
+        </a>
+
+        <span class="contact-item">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 0 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+          </span>
+          Gurgaon, India
+        </span>
+
+        <a class="contact-item" href="https://linkedin.com/in/tanmoyroy27" target="_blank">
+          <span class="ic">
+            <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+          </span>
+          linkedin.com/in/tanmoyroy27
+        </a>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       SIDEBAR
+  ============================================================ -->
+  <aside class="sidebar">
+
+    <!-- Skills with bars -->
+    <div>
+      <div class="sb-section-title">Core Skills</div>
+      <div class="skill-list">
+        <div class="skill-item">
+          <div class="skill-name"><span>Technical SEO</span><span>95%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>On-page SEO</span><span>92%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Off-page SEO</span><span>88%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>GEO / Analytics</span><span>85%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+        <div class="skill-item">
+          <div class="skill-name"><span>Content Strategy</span><span>82%</span></div>
+          <div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tools -->
+    <div>
+      <div class="sb-section-title">Tools & Platforms</div>
+      <div class="tools-list">
+        <span class="tool-chip">Google Analytics</span>
+        <span class="tool-chip">GAIQ Certified</span>
+        <span class="tool-chip">Google Search Console</span>
+        <span class="tool-chip">Screaming Frog</span>
+        <span class="tool-chip">Looker Studio</span>
+        <span class="tool-chip">ChatGPT</span>
+        <span class="tool-chip">Claude AI</span>
+        <span class="tool-chip">Perplexity</span>
+      </div>
+    </div>
+
+    <!-- Languages -->
+    <div>
+      <div class="sb-section-title">Languages</div>
+      <div class="lang-list">
+        <div class="lang-item">
+          <div class="lang-dot"></div>
+          <div class="lang-name">English</div>
+          <div class="lang-level">Full Professional</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-dot"></div>
+          <div class="lang-name">Hindi</div>
+          <div class="lang-level">Full Professional</div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-dot"></div>
+          <div class="lang-name">Bengali</div>
+          <div class="lang-level">Native</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interests -->
+    <div>
+      <div class="sb-section-title">Interests</div>
+      <div class="interest-list">
+        <div class="interest-item">
+          <!-- people icon -->
+          <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+          Connecting with New People
+        </div>
+        <div class="interest-item">
+          <!-- headphones icon -->
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-9 9v7c0 1.1.9 2 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H5v-2a7 7 0 1 1 14 0v2h-1a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-7a9 9 0 0 0-9-9z"/></svg>
+          Listening to Podcasts
+        </div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main class="main">
+
+    <!-- About / Summary -->
+    <section>
+      <div class="section-heading">
+        <div class="sh-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 12c2.7 0 4.8-2.1 4.8-4.8S14.7 2.4 12 2.4 7.2 4.5 7.2 7.2 9.3 12 12 12zm0 2.4c-3.2 0-9.6 1.6-9.6 4.8v2.4h19.2v-2.4c0-3.2-6.4-4.8-9.6-4.8z"/></svg>
+        </div>
+        <h2>About Me</h2>
+        <div class="sh-line"></div>
+      </div>
+      <div class="summary-card">
+        Senior SEO professional with <strong>4+ years of experience</strong> across enterprise and multi-client environments. Proven expertise in technical SEO, Generative Engine Optimization (GEO), analytics, and content strategy — with a strong track record in client-facing delivery and new-business pitch support.
+        <div class="domain-tags">
+          <span class="domain-tag">BFSI</span>
+          <span class="domain-tag">Healthcare</span>
+          <span class="domain-tag">E-commerce</span>
+          <span class="domain-tag">Logistics</span>
+          <span class="domain-tag">Automotive</span>
+          <span class="domain-tag">IT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section>
+      <div class="section-heading">
+        <div class="sh-icon">
+          <svg viewBox="0 0 24 24"><path d="M20 6h-2.18c.07-.44.18-.88.18-1.36C18 3.19 16.81 2 15.36 2c-.93 0-1.67.47-2.18 1.17L12 4.9l-1.18-1.73C10.31 2.47 9.57 2 8.64 2 7.19 2 6 3.19 6 4.64c0 .48.11.92.18 1.36H4c-1.11 0-2 .89-2 2v11c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z"/></svg>
+        </div>
+        <h2>Work Experience</h2>
+        <div class="sh-line"></div>
+      </div>
+
+      <div class="exp-list">
+
+        <!-- Job 1 -->
+        <div class="exp-card">
+          <div class="exp-top">
+            <div>
+              <div class="exp-role">Senior SEO Executive</div>
+              <div class="exp-company">Publicis Groupe — <span>Zenith Media, Gurugram</span></div>
+            </div>
+            <span class="exp-period">Nov 2024 – Present</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Owned projects end-to-end and managed all client interactions, ensuring seamless delivery of SEO strategies.</li>
+            <li>Led and improved internal SEO processes for greater operational efficiency across the team.</li>
+            <li>Actively contributed to new client acquisition by supporting business development pitches.</li>
+            <li>Created comprehensive SEO performance review decks on a monthly and quarterly basis for stakeholder reporting.</li>
+          </ul>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="exp-card">
+          <div class="exp-top">
+            <div>
+              <div class="exp-role">SEO Executive</div>
+              <div class="exp-company">Publicis Groupe — <span>Zenith Media, Gurugram</span></div>
+            </div>
+            <span class="exp-period">Sep 2023 – Oct 2024</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Managed all daily SEO tasks across client accounts; acted as the primary point of contact for client communication.</li>
+            <li>Contributed to a <span class="stat">37% increase in business revenue</span> through the implementation of targeted strategic SEO initiatives.</li>
+            <li>Delivered detailed performance reports on a weekly, monthly, and quarterly cadence to internal teams and clients.</li>
+            <li>Ensured all campaign activities ran smoothly and consistently met client KPIs and expected results.</li>
+          </ul>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="exp-card">
+          <div class="exp-top">
+            <div>
+              <div class="exp-role">SEO Executive</div>
+              <div class="exp-company">Kreative Machinez — <span>Kolkata</span></div>
+            </div>
+            <span class="exp-period">Dec 2021 – Sep 2023</span>
+          </div>
+          <ul class="exp-bullets">
+            <li>Developed and executed full-funnel SEO strategies covering technical audits, content planning, and on/off-page optimisation.</li>
+            <li>Improved website performance through in-depth technical audits using Screaming Frog and Google Search Console.</li>
+            <li>Increased conversion rates by implementing effective CTA placements identified through heatmap analysis.</li>
+            <li>Boosted business leads by <span class="stat">40%</span> through strategic optimisation of the Google Business Profile.</li>
+            <li>Delivered consistent weekly and monthly performance reports for client accounts.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section>
+      <div class="section-heading">
+        <div class="sh-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+        </div>
+        <h2>Education</h2>
+        <div class="sh-line"></div>
+      </div>
+
+      <div class="edu-card">
+        <div class="edu-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/></svg>
+        </div>
+        <div>
+          <div class="edu-degree">Bachelor of Commerce (Hons)</div>
+          <div class="edu-university">Calcutta University — Serampore College, West Bengal</div>
+          <div class="edu-meta">
+            <span class="edu-badge">2017 – 2020</span>
+            <span class="edu-badge">First Class</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</div><!-- end .page -->
+
+</body>
+</html>
